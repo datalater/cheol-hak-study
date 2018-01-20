@@ -12,7 +12,7 @@
 
 **MNIST 데이터 분류**:
 
-+ 추론에 필요한 함수 정의
++ 먼저 추론에 필요한 함수를 정의합니다.
 
 ```python
 
@@ -28,7 +28,7 @@ def init_network():
 
     return network
 
-# 레이어에서 input과 weight를 선형 결합한 값에 적용할 비선형 함수로 sigmoid를 정의합니다.
+# 레이어에서 input과 weight를 선형결합한 값에 적용할 비선형 함수로 sigmoid를 정의합니다.
 def sigmoid(x):
     return 1 / (1 + np.exp(-x))
 
@@ -55,13 +55,13 @@ def predict(network, x):
     return y
 ```
 
-+ 테스트 데이터에 대한 추론 실행
++ 테스트 데이터에 대한 추론을 실행합니다.
 
 ```python
 # x_test와 t_test를 리턴합니다.
 x, t = get_data()
 
-# 미리 저장해둔 hidden layer1 (50 units) + hidden layer2 (100) units으로 구성된 network를 리턴합니다.
+# 미리 저장해둔 hidden layer1 (50 units) + hidden layer2 (100 units)으로 구성된 network를 리턴합니다.
 network = init_network()
 
 # 정확도를 나타내는 변수 accuracy_cnt를 정수 타입으로 초기화합니다.
@@ -87,8 +87,8 @@ print("Accuracy:" + str(float(accuracy_cnt) / len(x)))
 
 ### Further study
 
++ 네트워크 코드 직접 짜보기 (W2)
 + 피클로 저장하는 법 해보기
-+ 네트워크 코드 직접 짜보기
 + 네트워크를 짤 때 뉴런의 개수가 어떤 의도를 가진 것인지 의미 파악하기
 
 ---
