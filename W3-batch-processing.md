@@ -51,7 +51,7 @@ for i in range(0, len(x), batch_size):
     x_batch = x[i:i+batch_size]
     # x_batch를 prediction해서 나온 100x10 score 벡터
     y_batch = predict(network, x_batch)
-    # x_batch 각 원소 데이터에서 가장 확률이 높은 class를 나타낸 벡터
+    # y_batch 각 원소 데이터에서 가장 확률이 높은 class를 나타낸 벡터
     p = np.argmax(y_batch, axis=1)
     # p와 실제 정답인 t_batch가 일치하는지 확인하여 정확도 측정
     accuracy_cnt += np.sum(p == t[i:i+batch_size])
@@ -64,7 +64,7 @@ print("Accuracy:" + str(float(accuracy_cnt) / len(x)))
 + `p=np.argmax(y_batch, axis=1)`: np.argmax((100,10), column per row)
 + `p.shape`: (100,)
 
-![batch-processing.png](/images/batch-processing.jpg)
+![batch-processing.png](./images/batch-processing.jpg)
 
 **복습 퀴즈**:
 
